@@ -4,4 +4,13 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        menu.cpp \
+        rwFunc.cpp
+
+HEADERS += \
+    menu.hpp \
+    rwFunc.hpp
+
+DISTFILES += \
+    building.db
