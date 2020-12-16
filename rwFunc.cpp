@@ -49,6 +49,8 @@ bool read_file(Building_spec* st)
         st[i].mast_fund = stoi(temp[8]);
         i++; //увеличение счетчика для массива структур
     }
+    cout << "File was opened successfully" << endl;
+    system("pause");
     in_file.close();
     return true;
 }
@@ -82,6 +84,8 @@ void write_file(Building_spec* st, int size)
                      << st[i].mast_fund << ';';
 
     }
+    cout << "File was saved successfully" << endl;
+    system("pause");
     out_file.close();
     return;
 }

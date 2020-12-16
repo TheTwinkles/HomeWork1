@@ -2,6 +2,7 @@
 #include "rwFunc.hpp"
 
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
@@ -13,10 +14,10 @@ int menu(Building_spec *st, int arr_size)
     {
         system("cls");
         cout << "1) Read File\n2) Write File\n3) Print File\n4) About Program\nq) Exit\n" << endl;
-        cin >> n; //РІС‹Р±РѕСЂ РїСѓРЅРєС‚Р° РјРµРЅСЋ
+        cin >> n; //выбор пункта меню
         switch (n)
         {
-        //РІС‹Р·РѕРІ С„СѓРЅРєС†РёР№ СЃРѕРѕС‚РІРµС‚СЃС‚РІСѓСЋС‰РёС… РїСѓРЅРєС‚Р°Рј РјРµРЅСЋ
+        //вызов функций соответствующих пунктам меню
             case 49: // 49 = "1"
                 file_open = read_file(st);
                 break;
@@ -57,7 +58,10 @@ void print_to_scr(bool file_open, Building_spec *pr_st, int arr_size)
     }
     system("pause");
 }
+
 void about()
 {
+    cout << "Заболотнов Николай Владимирович, ИЭУИС-2-6, Вариант Список объектов строительсва" << endl;
+    system("pause");
     return;
 }
