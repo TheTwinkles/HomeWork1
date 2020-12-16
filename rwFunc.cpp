@@ -7,9 +7,10 @@
 
 using namespace std;
 
-void read_file(Building_spec* st)
+//функция чтения данных из файла
+bool read_file(Building_spec* st)
 {
-    fstream in_file("building.db", ios_base::in); //открытие файлового потока
+    fstream in_file("building1251.db", ios_base::in); //открытие файлового потока
 
     //проверка открытия файла
     if(!in_file.is_open())
@@ -49,9 +50,10 @@ void read_file(Building_spec* st)
         i++; //увеличение счетчика для массива структур
     }
     in_file.close();
-    return;
+    return true;
 }
 
+//функция сохранения данных в файл
 void write_file(Building_spec* st, int size)
 {
     fstream out_file("building_output.db", ios::out); //открытие файлового потока
@@ -65,12 +67,21 @@ void write_file(Building_spec* st, int size)
 
     //заполнение файла массивом структур
     for (int i = 0; i < size; i++)
-        out_file << st[i].s_num << ';' << st[i].cont_num << ';'
-                 << st[i].obj_type << ';' << st[i].proj_name << ';'
-                 << st[i].obj_adr << ';' << st[i].beg_date << ';'
-                 << st[i].end_date << ';' << st[i].proj_cost << ';'
-                 << st[i].mast_fund << ';';
+    {
+        if (i != 9)
+            out_file << st[i].s_num << ';' << st[i].cont_num << ';'
+                     << st[i].obj_type << ';' << st[i].proj_name << ';'
+                     << st[i].obj_adr << ';' << st[i].beg_date << ';'
+                     << st[i].end_date << ';' << st[i].proj_cost << ';'
+                     << st[i].mast_fund << ';' << '\n';
+        else
+            out_file << st[i].s_num << ';' << st[i].cont_num << ';'
+                     << st[i].obj_type << ';' << st[i].proj_name << ';'
+                     << st[i].obj_adr << ';' << st[i].beg_date << ';'
+                     << st[i].end_date << ';' << st[i].proj_cost << ';'
+                     << st[i].mast_fund << ';';
 
+    }
     out_file.close();
     return;
 }

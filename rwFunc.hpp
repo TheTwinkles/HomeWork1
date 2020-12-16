@@ -3,6 +3,7 @@
 
 #include <string>
 
+//структура для хранения данных из building.db
 struct Building_spec
 {
     int s_num;
@@ -16,7 +17,7 @@ struct Building_spec
     int mast_fund;
 };
 
-void read_file(Building_spec* st);
-void write_file(Building_spec* st, int size);
+bool read_file(Building_spec* st); //прототип функции чтения данных из файла
+void write_file(Building_spec* st, int size); //прототип функции записи данных в файл
 
 #endif // RWFUNC_HPP
