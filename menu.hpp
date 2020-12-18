@@ -4,7 +4,7 @@
 #include "rwFunc.hpp"
 
 int menu(Building_spec* st, int arr_size);
-void print_to_scr(bool file_open, Building_spec* st, int arr_size);
-void about();
+inline void print_to_scr(bool file_open, Building_spec* st, int arr_size);
+inline void about();
 
 #endif // MENU_HPP

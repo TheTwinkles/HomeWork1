@@ -9,7 +9,7 @@ using namespace std;
 int menu(Building_spec *st, int arr_size)
 {
     char n = '\0';
-    bool file_open = false;
+    bool file_open = false; //переменная для отслеживания открыт ли файл (заполнен ли массив структур)
     while (true)
     {
         system("cls");
@@ -41,11 +41,12 @@ int menu(Building_spec *st, int arr_size)
     return 0;
 }
 
-void print_to_scr(bool file_open, Building_spec *pr_st, int arr_size)
+inline void print_to_scr(bool file_open, Building_spec *pr_st, int arr_size)
 {
     if (!file_open)
     {
         cerr << "Error: file is not open" << endl;
+        system("pause");
         return;
     }
     for (int i = 0; i < arr_size; i++)
@@ -59,7 +60,7 @@ void print_to_scr(bool file_open, Building_spec *pr_st, int arr_size)
     system("pause");
 }
 
-void about()
+inline void about()
 {
     cout << "Заболотнов Николай Владимирович, ИЭУИС-2-6, Вариант Список объектов строительсва" << endl;
     system("pause");
